@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+.compare-wrap{
+	display: table;
+	width: 100%;
+	font-size: 1.4rem;
+	color: #666;
+	padding: 20px 0;
+	.compare-row{
+		display: table-row;
+		line-height: 30px;
+	}
+	.compare-cell{
+		display: table-cell;
+		width: 50%;
+		text-align: center;
+	}
+	.compare-header{
+    	color: #333;
+    	font-size: 1.5rem;
+
+	}
+	.compare-cell.shop-name{
+		padding-left: 14%;
+		text-align: left;
+	}
+	.compare-cell.price{
+		color: #ff3a2f;
+	}
+}
+

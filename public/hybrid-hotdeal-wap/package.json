@@ -1,0 +1,10 @@
+
+{
+    "scripts": {
+        "build":"webpack --config ../../base/webpack.wap.js --progress --profile --colors --display-error-details --display-cached --bail --wap --stage ",
+
+        "start":"webpack-dev-server --inline --hot --progress --profile --colors --watch --display-error-details  --display-cached --config ../../base/webpack.dev.js --wap --stage"    }
+}
+
+
+
