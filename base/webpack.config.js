@@ -65,34 +65,28 @@ module.exports = {
   	//和loaders一样的语法，很简单
     perLoaders: [
         {
-            test: /\.jsx?$/,
-            include: APP_PATH,
-            loader: 'jshint-loader'
+            test: /\.js$/,
+            loader: 'eslint',
         }
     ],
     loaders: [
-    {
-        test: /\.jsx?$/,
-        loader: 'babel',
-        include: APP_PATH,
-        query: {
-          presets: ['es2015']
+        {
+          test: /\.jsx?$/,
+          loader: 'babel',
+          include: APP_PATH + '/dev',
+        },
+
+        {
+          test: /\.scss$/,
+          loaders: ['style', 'css', 'sass'],
+          include: APP_PATH
+        },
+        {
+          test: /\.(png|jpg)$/,
+          loader: 'url?limit=40000'
         }
-      },
-      {
-        test: /\.scss$/,
-        loaders: ['style', 'css', 'sass'],
-        include: APP_PATH
-      },
-      {
-        test: /\.(png|jpg)$/,
-        loader: 'url?limit=40000'
-      }
 
     ]
-  },
-  jshint: {
-  	"esnext": true
   },
 
   //添加我们的插件 会自动生成一个html文件
