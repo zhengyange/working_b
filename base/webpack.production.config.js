@@ -35,7 +35,6 @@ function getHtmlPlugin(type) {
     });
     return plugins;
 }
-getHtmlPlugin();
 
 
 
@@ -53,33 +52,42 @@ module.exports = {
   },
   module: {
     //和loaders一样的语法，很简单
-    perLoaders: [
-        {
-            test: /\.jsx?$/,
-            include: APP_PATH,
-            loader: 'jshint-loader'
-        }
-    ],
     loaders: [
-    {
-        test: /\.jsx?$/,
-        loader: 'babel',
-        include: APP_PATH,
-        query: {
-          presets: ['es2015']
+        {
+          test: /\.jsx?$/,
+          loader: 'babel',
+          include: APP_PATH + '/dev',
+        },
+        {
+          test: /\.vue$/,
+          loader: 'vue',
+          include: APP_PATH + '/dev',
+        },
+
+        {
+          test: /\.scss$/,
+          loaders: ['style', 'css', 'sass'],
+          include: APP_PATH
+        },
+        {
+          test: /\.(png|jpg)$/,
+          loader: 'url?limit=40000'
         }
-      },
-      {
-        test: /\.scss$/,
-        loaders: ['style', 'css', 'sass'],
-        include: APP_PATH
-      },
-      {
-        test: /\.(png|jpg)$/,
-        loader: 'url?limit=40000'
-      }
 
     ]
+  },
+  resolve: {
+      // require时省略的扩展名，如：require('module') 不需要module.js
+      extensions: ['', '.js', '.vue'],
+      // 别名，可以直接使用别名来代表设定的路径以及其他
+      alias: {
+      }
+  },
+
+  vue: {
+    loaders: {
+      css: 'style!css!autoprefixer!sass'
+    }
   },
 
   //添加我们的插件 会自动生成一个html文件

@@ -75,6 +75,11 @@ module.exports = {
           loader: 'babel',
           include: APP_PATH + '/dev',
         },
+        {
+          test: /\.vue$/,
+          loader: 'vue',
+          include: APP_PATH + '/dev',
+        },
 
         {
           test: /\.scss$/,
@@ -87,6 +92,19 @@ module.exports = {
         }
 
     ]
+  },
+  resolve: {
+      // require时省略的扩展名，如：require('module') 不需要module.js
+      extensions: ['', '.js', '.vue'],
+      // 别名，可以直接使用别名来代表设定的路径以及其他
+      alias: {
+      }
+  },
+
+  vue: {
+    loaders: {
+      css: 'style!css!autoprefixer!sass'
+    }
   },
 
   //添加我们的插件 会自动生成一个html文件
