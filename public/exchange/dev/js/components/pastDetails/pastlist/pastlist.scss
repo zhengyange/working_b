@@ -1,0 +1,22 @@
+@charset "UTF-8";
+body{background-color: #f3f4f6;}
+.past-item{padding: 15px;font-size: 1.5rem;border-top: 1px solid #e1e1e1;background-color: #fff;margin-bottom: 10px;
+	.title{border-bottom: 1px solid #e1e1e1;line-height: 50px;
+		.time{color: #999;margin-left: 10%;}
+		.status{color: #ff5e00;}
+	}
+	.content{color: #333;line-height: 30px;padding-top: 6px;
+		.content-time{text-indent: 20%;	background: url('../../../../img/clock.png') 12% 5px no-repeat;background-size: 20px;}
+		.time{color: #ff5e00;margin-right: 16px;border-radius: 5px;border:1px solid #ff5e00;padding: 2px 3px;}
+		.join-details{text-align: right;color: #666;position: relative;padding-right: 26px;}
+		.join-details:after{content:' ';position: absolute;width: 16px;height:9px;background: url('../../../../img/trigle-down.png') 0 0 no-repeat;background-size: 100% auto;right: 0;top: 12px;display: inline-block;-webkit-transform-origin: 50%;transform-origin: 50%;transition:all ease-in .5s;-webkit-transition:all ease-in .2s;}
+		.join-details.showNum:after{-webkit-transform: rotate(180deg);transform: rotate(180deg);color: #ff5e00;}
+		.join-details.showNum{color: #ff5e00;}
+		.content-cancel{padding-top: 10px; text-align: center;}
+		.winer{color: #333;font-size: 1.3rem;}
+	}
+	.join-list{border-top: 1px solid #e1e1e1;height: 0;overflow: hidden;opacity: 0;transition: all ease-in .3s;-webkit-transition: all ease-in .3s;}
+	.join-list.show{height: auto;opacity: 1;}
+}
+
+

@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+.join-item{color:#666;font-size: 1.5rem;padding: 0 15px;line-height: 40px;
+	.time-year{background: url('../../../../img/join-red.png') 6px 11px no-repeat;background-size: 16px;}
+	.time-name{background: url('../../../../img/join-gray.png') 10px 15px no-repeat;background-size: 8px;}
+	.time-year,.time-name{text-indent: 26px;position: relative;}
+	.time-year:after,.time-name:after{content: '';position: absolute;width: 1px;background-color: #d7d7d7;height: 100%;left: 13px;top: 27px;}
+	.time-name:after{height: 100%;top:22px;}
+	.time-name:last-child:after{height: 72%;}
+	.time-name{position: relative;
+		span{margin-right: 15px;}
+		span:last-child{position: absolute;right: 0;padding-right: 26px;}
+		span:last-child:after{content:' ';position: absolute;width: 16px;height:9px;background: url('../../../../img/trigle-down.png') 0 0 no-repeat;background-size: 100% auto;right: 0;top: 16px;display: inline-block;-webkit-transform-origin: 50%;transform-origin: 50%;transition:all ease-in .5s;-webkit-transition:all ease-in .2s;}
+		span.showNum:after{-webkit-transform: rotate(180deg);transform: rotate(180deg);}
+	}
+}

@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+.page-wrap{width: 100%;}
+
+.img-wrap{position: absolute;width: 100%;padding-top: 50%;overflow: hidden;
+img{position: absolute;top: 0;left: 0;width: 100%;}
+}
+.banner-wrap{position: relative;width: 100%;padding-top: 50%;overflow: hidden;
+img{position: absolute;top: 0;left: 0;width: 100%;}}
+.winning-info{line-height: 50px;font-size: 1.6rem;color: #666;padding-left: 50px;background: url('../../../../img/audio.png') 18px 12px no-repeat;background-size: 24px;}

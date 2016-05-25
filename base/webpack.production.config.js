@@ -2,11 +2,13 @@ var path = require('path');
 var glob = require('glob');
 var webpack = require('webpack');
 var HtmlwebpackPlugin = require('html-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
+
 
 //一些文件夹的路径
 
 var APP_PATH = path.resolve(process.cwd());
-var BUILD_PATH = path.resolve(APP_PATH, 'build');
+var BUILD_PATH = path.resolve(APP_PATH, 'src/build');
 
 //项目中的入口文件，应该会有好多
 function getEntry() {
@@ -27,7 +29,7 @@ function getHtmlPlugin(type) {
         var n = name.match(/([^/]+?)\.html/)[1];
         plugins.push(
             new HtmlwebpackPlugin({
-                filename:n+'.html',
+                filename:'../'+n+'.html',
                 template:name,
                 inject:false
             })
@@ -39,7 +41,7 @@ function getHtmlPlugin(type) {
 
 
 var metadata = {
-  host: "b5m"
+  host: "./build"
 };
 
 module.exports = {
@@ -67,7 +69,6 @@ module.exports = {
         {
           test: /\.scss$/,
           loaders: ['style', 'css', 'sass'],
-          include: APP_PATH
         },
         {
           test: /\.(png|jpg)$/,
@@ -81,6 +82,11 @@ module.exports = {
       extensions: ['', '.js', '.vue'],
       // 别名，可以直接使用别名来代表设定的路径以及其他
       alias: {
+        'zepto': path.join(process.cwd(), '..','common/plugins/zepto.min.js'),
+        'swiper': path.join(process.cwd(), '..','common/plugins/swiper.min.js'),
+        'imgLazyLoad': path.join(process.cwd(), '..','common/plugins/imglazyload.js'),
+        'art-template': path.join(process.cwd(), '..','common/plugins/art-template.js'),
+        'common.scss': path.join(process.cwd(), '..','common/scss/common.scss'),
       }
   },
 
@@ -98,6 +104,10 @@ module.exports = {
         metadata: JSON.stringify(metadata)
     }),
     new webpack.ProvidePlugin({
-    })
+    }),
+    new CopyWebpackPlugin([{
+        from: 'dev/htmlImg',
+        to: 'htmlImg'
+    }]),
   ].concat(getHtmlPlugin()),
 };

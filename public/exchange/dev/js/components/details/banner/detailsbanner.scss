@@ -1,0 +1,32 @@
+@charset "UTF-8";
+body{
+	background-color: #fff;
+}
+
+.banner-padding-top{
+	padding-top: 25% 0;
+}
+.homebanner { width: 100%;
+    li { position: relative;
+        img{ position:absolute;left:0;top:0; width: 100%;}
+    }
+    
+}
+.swiper-container-horizontal > .swiper-pagination{
+	width: auto;
+	right: 20px;
+	left: auto;
+}
+.swiper-container-horizontal > .swiper-pagination .swiper-pagination-bullet{
+	background-color: #ccc;
+	opacity: 1;
+}
+.swiper-container-horizontal > .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active{
+	background-color: #ff841e;
+}
+.swiper-item{
+	height: 50%;
+}
+.borderBottom{
+	border-bottom: 1px solid #e1e1e1;
+}
