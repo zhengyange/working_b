@@ -1,6 +1,6 @@
 import {createStore,compose,applyMiddleware} from 'redux';
 import thunkMiddleware from 'redux-thunk';
-import RootReducer from '../reducer/RootReducer.js';
+import DetailsReducer from '../reducer/DetailsReducer.js';
 
 //devTools
 // import { devTools, persistState } from 'redux-devtools';
@@ -14,6 +14,6 @@ const createStoreWithMiddleware = applyMiddleware(
   // persistState(window.location.href.match(/[?&]debug_session=([^&]+)\b/))
 )(createStore))
 
-const store = createStoreWithMiddleware(RootReducer);
+const store = createStoreWithMiddleware(DetailsReducer);
 
 export default store;

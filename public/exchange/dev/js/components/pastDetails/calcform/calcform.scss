@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+.border{border-bottom: 1px solid #e1e1e1;}
+.calc-from{font-size: 1.3rem;color: #333;background-color: #fff;
+	span{color: #ff5e00;}
+	p{line-height: 30px;}
+	.cacl1{background-color: #ff5e00;padding: 10px 7px;color: #fff;font-size: 1.4rem;}
+	.cacl2,.cacl3{padding: 10px;}
+	.cacl2-p,.cacl3-p{
+		span{color: #999;}
+	}
+	.cacl2-p{
+		span:first-child{margin-left: 48px;}
+		span:nth-child(2){margin-left: 15px;}
+		span:last-child{margin-left: 32px;}
+	}
+	.cacl3-p{
+		span:first-child{margin-left: 33px;}
+		span:last-child{margin-left: 150px;}
+	}
+}

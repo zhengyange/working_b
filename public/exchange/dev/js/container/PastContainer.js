@@ -6,6 +6,7 @@ import {connect} from 'react-redux';
 import * as actions from '../action/Action';
 
 import PastList from '../components/pastDetails/pastlist';
+import CalcForm from '../components/pastDetails/calcform';
 
 
 class PastContainer extends Component{
@@ -26,6 +27,7 @@ class PastContainer extends Component{
         return(
             <div className="page-wrap">
                 <PastList />
+                <CalcForm />
             </div>
         )
     }

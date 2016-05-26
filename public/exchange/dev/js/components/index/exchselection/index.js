@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './exchangeselection.scss';
-import ExchList from './ExchList.js';
+import ExchItem from './ExchItem.js';
 
 export default class ExchangeSelection extends Component {
 	constructor(props){
@@ -15,10 +15,12 @@ export default class ExchangeSelection extends Component {
 				<div className="title-wrap">
 					<img src={metadata.host+"/htmlImg/placeholder.png"} data-lazy-src={metadata.host+"/htmlImg/exchange.jpg"} />
 				</div>
-				<ExchList />
-				<ExchList />
-				<ExchList />
-				<ExchList />
+				<ExchItem />
+				<ExchItem />
+				<ExchItem />
+				<ExchItem 
+					isOver="true"
+				/>
 			</div>
 		)
 	}

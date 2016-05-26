@@ -16,9 +16,10 @@
 		}
 	}
 }
+
 .exch-button-wrap{height: 50px;position: relative;
-	.process-bg{border-radius: 5px;height: 10px;background-color: #ffc9c6;display: inline-block;width: 70%;position: absolute;top: 20px;overflow: hidden;
-		.process-ing{height: 10px;width: 20%;background-color: #ff3a2f;border-radius: 5px;}
+	.process-bg{border-radius: 4px;height: 8px;background-color: #ffc9c6;display: inline-block;width: 70%;position: absolute;top: 20px;overflow: hidden;
+		.process-ing{height: 8px;width: 20%;background-color: #ff3a2f;border-radius:4px;}
 
 	}
 
@@ -31,3 +32,13 @@
 	font-size: 1.5rem;
 	span{color: #ff3a2f;}
 }
+.exch-list.is-over{position: relative;
+	.exch-button-wrap{
+		.process-bg, .process-ing, .exch-button{background-color: #cdcdcd;}
+		.exch-button-bg{background-color: #efefef;}
+	}
+	.exch-process{color: #999999;
+		span{color: #999;}
+	}
+}
+.exch-list.is-over:after{content: ''; width: 80px; height: 80px; position: absolute;background: url('../../../../img/exch-over.png') 0 0 no-repeat;background-size: 100%;z-index: 99;bottom: 20px;right: 14px;}

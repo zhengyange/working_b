@@ -1,19 +1,13 @@
 import {createStore,compose,applyMiddleware} from 'redux';
 import thunkMiddleware from 'redux-thunk';
-import RootReducer from '../reducer/RootReducer.js';
-
-//devTools
-// import { devTools, persistState } from 'redux-devtools';
-// import { DevTools, DebugPanel, LogMonitor } from 'redux-devtools/lib/react';
-// import DiffMonitor from 'redux-devtools-diff-monitor';
+import IndexReducer from '../reducer/IndexReducer.js';
 
 const createStoreWithMiddleware = applyMiddleware(
 	thunkMiddleware,
 )(compose(
   // devTools(),
-  // persistState(window.location.href.match(/[?&]debug_session=([^&]+)\b/))
 )(createStore))
 
-const store = createStoreWithMiddleware(RootReducer);
+const store = createStoreWithMiddleware(IndexReducer);
 
 export default store;

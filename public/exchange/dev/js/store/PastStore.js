@@ -1,6 +1,6 @@
 import {createStore,compose,applyMiddleware} from 'redux';
 import thunkMiddleware from 'redux-thunk';
-import RootReducer from '../reducer/RootReducer.js';
+import PastReducer from '../reducer/PastReducer.js';
 
 const createStoreWithMiddleware = applyMiddleware(
 	thunkMiddleware,
@@ -8,6 +8,6 @@ const createStoreWithMiddleware = applyMiddleware(
 
 )(createStore))
 
-const store = createStoreWithMiddleware(RootReducer);
+const store = createStoreWithMiddleware(PastReducer);
 
 export default store;

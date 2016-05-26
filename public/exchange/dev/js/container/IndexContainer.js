@@ -6,6 +6,7 @@ import {connect} from 'react-redux';
 import * as actions from '../action/Action';
 
 import Banner from '../components/index/banner';
+import Winners from '../components/index/winners';
 import ExchangeSelection from '../components/index/exchselection';
 
 let imglazyload = require('imgLazyLoad');
@@ -42,6 +43,7 @@ class IndexContainer extends Component{
         return(
             <div className="page-wrap">
                 <Banner />
+                <Winners />
                 <ExchangeSelection />
             </div>
         )
