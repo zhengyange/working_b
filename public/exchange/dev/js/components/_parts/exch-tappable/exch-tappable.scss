@@ -1,0 +1,5 @@
+@charset "UTF-8";
+
+.Tappable-active{background-color:#f7f6f1;}
+.imgdetails{padding: 15px;position: relative;}
+.imgdetails:after{content: ''; background: url('../../../../img/trigle.png') 0 0 no-repeat;background-size: auto 100%;position: absolute;bottom: 14px;right: 15px;width: 12px; height: 18px;}
