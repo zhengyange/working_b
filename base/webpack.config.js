@@ -8,6 +8,7 @@ var CopyWebpackPlugin = require('copy-webpack-plugin');
 //一些文件夹的路径
 
 var APP_PATH = path.resolve(process.cwd());
+console.log(APP_PATH)
 var BUILD_PATH = path.resolve(APP_PATH, 'src/build');
 
 //项目中的入口文件，应该会有好多
@@ -75,12 +76,14 @@ module.exports = {
         {
           test: /\.jsx?$/,
           loader: 'babel',
-          include: APP_PATH + '/dev',
+          // include: APP_PATH + '/dev',
+          exclude: /node_modules/
         },
         {
           test: /\.vue$/,
           loader: 'vue',
-          include: APP_PATH + '/dev',
+          // include: APP_PATH + '/dev',
+          exclude: /node_modules/
         },
 
         {
