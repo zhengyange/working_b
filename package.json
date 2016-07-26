@@ -42,6 +42,6 @@
     "zepto": "^1.0.1"
   },
   "dependencies": {
-    "glob": "^7.0.3"
+    "glob": "^7.0.5"
   }
 }
