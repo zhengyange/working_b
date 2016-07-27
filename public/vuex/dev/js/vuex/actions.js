@@ -5,7 +5,7 @@
  */
 
 export const incrementCounter = function({dispatch, state}, payload){
-	dispatch('INCREMENT', payload);+6
+	dispatch('INCREMENT', payload);
 }
 
 export const decrementCounter = function(store){

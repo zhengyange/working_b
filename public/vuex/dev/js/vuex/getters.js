@@ -3,5 +3,6 @@
  * 我们可以根据需要，返回需要的状态信息
  */
 export function getCount(state){
-	return state.count
+	console.log(state)
+	return state.count.count
 }

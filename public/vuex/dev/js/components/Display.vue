@@ -31,6 +31,6 @@
 
 <template>
 	<div>
-		<h3>Count is {{ counterValue }}</h3>
+		<h3>Count is {{ counterValue.count }}</h3>
 	</div>
 </template>

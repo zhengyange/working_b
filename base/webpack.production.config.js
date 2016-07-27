@@ -101,7 +101,8 @@ module.exports = {
       //把入口文件里面的数组打包成verdors.js
     new webpack.optimize.CommonsChunkPlugin('common.js'),
     new webpack.DefinePlugin({
-        metadata: JSON.stringify(metadata)
+        metadata: JSON.stringify(metadata),
+        PRODUCTION: JSON.stringify(true)
     }),
     new webpack.ProvidePlugin({
     }),
