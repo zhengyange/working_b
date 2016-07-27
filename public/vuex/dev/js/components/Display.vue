@@ -14,6 +14,9 @@
 		/*
 		 * 获得所需state，从store
 		 */
+		created: function(){
+			console.log(this.counter)
+		},
 		vuex: {
 			getters: {
 				/*
@@ -23,7 +26,7 @@
 				 * 仅仅当依赖关系改变时，才会重新执行，
 				 * 所以getter函数不会每次执行
 				 */
-				counterValue: getCount
+				counter: getCount
 			}
 		}
 	}
@@ -31,6 +34,6 @@
 
 <template>
 	<div>
-		<h3>Count is {{ counterValue.count }}</h3>
+		<h3>Count is {{ counter.count }}</h3>
 	</div>
 </template>

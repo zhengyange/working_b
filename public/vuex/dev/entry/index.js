@@ -9,3 +9,10 @@ import app from '../js/components/App.vue';
 Vue.config.debug = true;//开启错误提示
 
 var vm = new Vue(app);
+
+// console.log(vm.$data);
+// console.log(vm.$el);
+// vm.$watch('message', function(newVal, oldVal){
+// 	console.log(newVal, oldVal)
+// });
+// vm.message = 'akjflasdjkf;lasjf'

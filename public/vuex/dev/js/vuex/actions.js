@@ -9,7 +9,6 @@ export const incrementCounter = function({dispatch, state}, payload){
 }
 
 export const decrementCounter = function(store){
-	console.log(store)
 	let {dispatch, state} = store;
 	setTimeout(function(){
 		dispatch('DECREMENT', 1)

@@ -9,9 +9,9 @@ import all from './modules/all.js';
 Vue.use(Vuex);
 
 //相当于redux中的state
-const state = {
-	count: 0
-}
+// const state = {
+// 	count: 0
+// }
 
 //相当于redux中的reducer
 // const mutations = {
@@ -31,7 +31,7 @@ const state = {
 
 export default new Vuex.Store({
 	modules:{
-		count,
+		counter:count,
 		all
 	}
 	
