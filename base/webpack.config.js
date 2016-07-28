@@ -56,13 +56,15 @@ module.exports = {
     inline: true,
     progress: true,
   },
-  devtool: 'eval-source-map',
+  devtool: '#eval-source-map',
   entry: getEntry(),
 
   //输出的文件名 合并以后的js会命名为bundle.js
   output: {
     path: BUILD_PATH,
-    filename: '[name].js'
+    // publicPath: 'http://localhost:8080/',
+    filename: '[name].js',
+    sourceMapFilename: '[file].map'
   },
   module: {
   	//和loaders一样的语法，很简单
@@ -88,7 +90,7 @@ module.exports = {
 
         {
           test: /\.scss$/,
-          loaders: ['style', 'css', 'sass'],
+          loaders: ['style', 'css', 'sass?sourceMap'],
         },
         {
           test: /\.(png|jpg)$/,
