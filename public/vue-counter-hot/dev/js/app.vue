@@ -1,6 +1,7 @@
 <script>
-    import store from './store.js';
-    import {increment, decrement, incrementIfOdd, incrementAsync} from './actions.js';
+    import store from './vuex/store.js';
+    import {increment, decrement, incrementIfOdd, incrementAsync} from './vuex/actions.js';
+    import {recentHistory} from './vuex/getters.js';
 
     //es6
     export default {
@@ -14,7 +15,8 @@
         store: store,
         vuex: {
             getters: {
-              count: state => state.count
+              count: state => state.count,
+              recentHistory
             },
             actions: {
                 increment,
@@ -32,6 +34,9 @@
         <button @click="decrement">-</button>
         <button @click="incrementIfOdd">Increment if odd</button>
         <button @click="incrementAsync">Increment async</button>
+        <div>
+          <div>Recent History: {{recentHistory}}</div>
+        </div>
     </div>
 </template>
 <style lang="sass">

@@ -1,19 +1,14 @@
 import Vue from "vue";
 import Vuex from 'vuex';
+import mutations from './mutations.js'
+
 Vue.use(Vuex);
 
 const state = {
-	count: 0
+	count: 0,
+	history: []
 }
 
-const mutations = {
-	INCREMENT(state){
-		state.count++
-	},
-	DECREMENT (state) {
-	    state.count--
-	}
-}
 
 export default new Vuex.Store({
 	state,
