@@ -7,6 +7,20 @@ import Vue from "vue";
 // import app from '../js/app.vue';
 import app from '../js/components/App.vue';
 Vue.config.debug = true;//开启错误提示
+//必须在实例话之前设置
+// Vue.transition('expand', {
+// 	beforeEnter: function(el){
+// 		alert('确定了？')
+// 		return false;
+// 	}
+// })
+Vue.transition('stagger', {
+  stagger: function (index) {
+    // 每个过渡项目增加 50ms 延时
+    // 但是最大延时限制为 300ms
+    return Math.min(300, index * 50)
+  }
+})
 
 var vm = new Vue(app);
 
@@ -16,3 +30,9 @@ var vm = new Vue(app);
 // 	console.log(newVal, oldVal)
 // });
 // vm.message = 'akjflasdjkf;lasjf'
+// vm.todos[1] = {text:'测试用例'};
+vm.todos.$set(3, {text: '测试工工   '});
+
+setTimeout(function(){
+	vm.todos.splice(0, 1);
+}, 1000);
