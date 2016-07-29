@@ -11,6 +11,12 @@
 	 * 4. so on.....
 	 */
 	export default {
+		data: function(){
+			return {
+				ifConsole: true,
+				filtersValue: 'shanghai liale!'
+			}
+		},
 		/*
 		 * 获得所需state，从store
 		 */
@@ -28,12 +34,29 @@
 				 */
 				counter: getCount
 			}
+		},
+		directives: {
+			testdv: {
+				bind: function(){
+					console.log('binding..........')
+				},
+				update: function(args){
+					console.log('directives', args)
+				}
+			}
+		},
+		filters: {
+			reverse: function(value, ...args){
+				console.log(value, args)
+				return value.split('').reverse().join(',');
+			}
 		}
 	}
 </script>
 
 <template>
 	<div>
-		<h3>Count is {{ counter.count }}</h3>
+		<h3 v-testdv.literal="ifConsole">Count is {{ counter.count }}</h3>
+		<h2>{{filtersValue | reverse 'before' 'after'}}</h2>
 	</div>
 </template>
