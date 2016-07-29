@@ -7,7 +7,7 @@ const mutations = {
 	},
 	[DECREMENT] (state) {
 	    state.count--;
-	    state.history.push('decrement')
+	    state.history.push('decrement');
 	}
 }
 
