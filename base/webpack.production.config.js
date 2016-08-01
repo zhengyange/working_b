@@ -58,14 +58,19 @@ module.exports = {
         {
           test: /\.jsx?$/,
           loader: 'babel',
-          include: APP_PATH + '/dev',
+          // include: APP_PATH + '/dev',
+          exclude: /node_modules/
         },
         {
           test: /\.vue$/,
           loader: 'vue',
-          include: APP_PATH + '/dev',
+          // include: APP_PATH + '/dev',
+          exclude: /node_modules/
         },
-
+        {
+          test: /\.(css)$/,
+          loader: 'style-loader!css-loader'
+        },
         {
           test: /\.scss$/,
           loaders: ['style', 'css', 'sass'],
