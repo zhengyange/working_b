@@ -1,4 +1,14 @@
 <script>
+    /**
+     * 引入公用基础scss样式
+     *
+     */
+    import '../common/scss/common.scss'; 
+    /**
+     * 引入组件
+     */
+    import searchOptions from './components/searchOptions';
+    import searchInput from './components/searchInput'
     //es6
     export default {
         el:"#app",
@@ -8,31 +18,26 @@
                 name:"guowenfh",
                 age:"2q1222222222222"
             }
+        },
+        components: {
+            searchOptions,
+            searchInput
         }
     }
 </script>
 <template>
-    <div>
-        <h1>姓名：{{name}}</h1>
-        <h2>{{age}}</h2>
+    <div class="container">
+        <div class="main-out">
+            <div class="search-out">
+                <search-options></search-options>
+                <search-input></search-input>
+            </div>
+        </div>
+        
     </div>
 </template>
 <style lang="sass">
-    /*测试一下对sass的编译*/
-    $qwe:#098;
-    body{
-        background-color: $qwe;
-        h1{
-            background-color: #eee;
-            color: red;
-            transform: translate(10%, 10%);
-        }
-        h1:hover{
-            height:100px;
-        }
-
-        h2{
-            background-color: #d7d7d7;
-        }
-    }
+    .container{ width: 100%;height:100%; background: url('../img/bg.jpg') no-repeat; background-size: cover;background-position:center center;padding-top: 300px;}
+    .main-out{position:relative; width: 1010px; height: 600px; z-index: 10; overflow: hidden;margin: 0 auto; text-align: center;}
+    .search-out{width: 560px; height: 60px; margin: 30px auto 0;}
 </style>
