@@ -8,6 +8,7 @@ export const incrementIfOdd = ({ dispatch, state }) => {
     dispatch(INCREMENT)
   }
 }
+//这是什么
 
 export const incrementAsync = ({ dispatch }) => {
   setTimeout(() => {

@@ -1,7 +1,8 @@
 <script>
     import store from './vuex/store.js';
     import {increment, decrement, incrementIfOdd, incrementAsync} from './vuex/actions.js';
-    import {recentHistory} from './vuex/getters.js';
+    // import {recentHistory} from './vuex/getters.js';
+    import {recentHistory} from '.vuex/getters.js';
 
     //es6
     export default {
