@@ -4,6 +4,7 @@
  * 可以使用ES6的解构语法，传递两个参数到action
  */
 
+
 export const incrementCounter = function({dispatch, state}, payload){
 	dispatch('INCREMENT', payload);
 }

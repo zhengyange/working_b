@@ -14,7 +14,18 @@
 					from: '搜狗搜索',
 					sgurl: '阿迪达斯',
 					results: ['adsfe','adsfe','adsfe','adsfe','adsfe']
-				}
+				},
+				showSearchEngines: false,
+				showSearchResults: false
+			}
+		},
+		methods: {
+			toggleShowEngines(){
+				this.showSearchEngines = !this.showSearchEngines;
+			},
+			handleSearchResults(){
+				console.log(this.showSearchResults)
+				this.showSearchResults = true;
 			}
 		},
 		components: {
@@ -25,13 +36,26 @@
 </script>
 <template>
 	<div class="search-input">
-		<div class="search-change">
+		<div class="search-change"
+			@click="toggleShowEngines"
+		>
 			<div class="search-logo"></div>
 		</div>
-		<input type="search" class="input-text" placeholder="百度">
+		<input type="search" class="input-text" placeholder="百度"
+			@keyup="handleSearchResults"
+		>
 		<label class="search-btn"></label>
-		<search-engine :engines="engines"></search-engine>
-		<search-result :searchResults="searchResults"></search-result>
+		<search-engine 
+			v-show="showSearchEngines" 
+			:engines="engines"
+			
+		>
+		</search-engine>
+		<search-result 
+			:searchResults="searchResults"
+			v-show="showSearchResults"
+		>
+		</search-result>
 	</div>
 </template>
 <style lang="sass">
