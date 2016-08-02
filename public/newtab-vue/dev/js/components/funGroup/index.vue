@@ -19,13 +19,16 @@
 			TheIcon
 		},
 		methods: {
-			
+			handleChangeSlide(e){
+				
+				this.$dispatch('change-slide', e.target)
+			}
 		}
 	}
 </script>
 
 <template>
-	<div class="group">
+	<div class="group" @click="handleChangeSlide">
 		<the-icon v-for="theIcon in theIcons" 
 			:the-icon="theIcon"
 		>			

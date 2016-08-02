@@ -11,6 +11,8 @@
     import searchInput from './components/searchInput';
     import funGroup from './components/funGroup';
 
+    import { addClickEvent } from './utils/dom-helper.js';
+
     //es6
     export default {
         el:"#app",
@@ -49,11 +51,52 @@
             }
         },
         methods: {
-            handleShowRightBar(slide){
-                console.log(slide)
+            handleShowRightBar(target){
+                console.log(target)
                 this.showRightBar = !this.showRightBar;
-                this.currentSlide = slide;
+                // this.currentSlide = slide;
             }
+        },
+        ready: function(){
+            /**
+             * 问题：右侧slide详情的出现隐藏逻辑
+             * 1. 只有点击特点的标签才会出现
+             * 2. 点击同一个标签，则会出现隐藏切换
+             * 3. 点击特定的标签外的元素，则都要进行隐藏
+             * 4. 右上角“+”按钮，点击显示最后一次点击标签出现的slide，再次点击则关闭
+             * 5. 为了操作方便，在此直接操作dom
+             */
+            const that = this;
+            addClickEvent(document.body, function(e){
+                const target = e.target;
+                const storageSlide = localStorage.getItem('currentSlide');
+                //点击正常的标签
+                if(target.classList.contains('iconInIn')){
+                    if(storageSlide === target.dataset.id && that.showRightBar){
+                        return false;
+                    }
+                    that.showRightBar = true;
+                    that.currentSlide = target.dataset.id;
+                    //存储当前最近的slide
+                    localStorage.setItem('currentSlide', that.currentSlide);
+                    return false;
+                }
+
+                //点击展开和隐藏按钮
+                if(target.classList.contains('addButton')){
+                    that.showRightBar = !that.showRightBar;
+                    if(that.showRightBar){
+                        that.currentSlide = storageSlide ? storageSlide : 'weather';
+                    }else{
+                        that.currentSlide = '';
+                    }
+                    return false;
+                }
+
+                //否则隐藏
+                that.showRightBar = false;
+                that.currentSlide = '';
+            })
         }
     }
 </script>
@@ -66,7 +109,6 @@
             </div>
             <div class="main-all">
                 <fun-group 
-                    @change-slide="handleShowRightBar"
                 >
                 </fun-group>
             </div>
@@ -77,7 +119,7 @@
                 </div>
             </div>
         </div>
-        <div class="addButton" :class="{addButtonToClose: showRightBar}" @click="handleShowRightBar"></div> 
+        <div class="addButton" :class="{addButtonToClose: showRightBar}" data-id="changeSlideShow"></div> 
         <components 
             :is="currentSlide"
             keep-alive
