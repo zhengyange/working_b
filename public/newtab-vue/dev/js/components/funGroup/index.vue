@@ -15,22 +15,20 @@
 				]	
 			}
 		},
+		props: ['showDeleteIcon'],
 		components: {
 			TheIcon
 		},
 		methods: {
-			handleChangeSlide(e){
-				
-				this.$dispatch('change-slide', e.target)
-			}
 		}
 	}
 </script>
 
 <template>
-	<div class="group" @click="handleChangeSlide">
+	<div class="group">
 		<the-icon v-for="theIcon in theIcons" 
 			:the-icon="theIcon"
+			:show-delete-icon="showDeleteIcon"
 		>			
 		</the-icon>
 		

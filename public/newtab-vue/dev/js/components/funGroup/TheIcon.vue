@@ -1,6 +1,12 @@
 <script type="text/javascript">
 	export default {
-        props: ['theIcon'],
+        data: function(){
+            return {
+                isShowDelete: false
+            }
+        },
+
+        props: ['theIcon', 'showDeleteIcon'],
         computed: {
             styleData: function(){
                 return {
@@ -10,24 +16,33 @@
             }
         },
         methods: {
-            dispatchChangeSlide(slide){
-                this.$dispatch('change-slide', slide);
+            dispatchChangeSlide(event){
+                if(event.which != 3){
+                    return false;
+                }
+                //显示删除功能
+                // this.isShowDelete = true;
+                this.$dispatch('show-delete');
+            },
+            dispatchDeleteApp(event){
+                console.log(event)
             }
         }
 	}
 </script>
 
 <template>
-	<div class="icon theIcon2x5 fl">
+	<div class="icon theIcon2x5 fl" :class="{'icon-delete': showDeleteIcon}">
 		<div class="iconIn">
 			<div class="iconInIn" 
                 v-bind:style="styleData"
                 :data-id="theIcon.id"
+                @mouseUp="dispatchChangeSlide($event)"
             >
                          
             </div>
 			<div class="notiNum" style="display: none;"></div>
-			<img draggable="false" class="deleteico" src="../../../img/remove.png" style="display: none;">
+			<img draggable="false" class="deleteico" src="../../../img/remove.png">
         </div>
 		<div draggable="false" class="iconName theIconName2x5 globalColor">{{theIcon.title}}</div>
 	</div>
@@ -47,7 +62,7 @@
     background-position: center;
     background-repeat: no-repeat;
 }
-.icon {
+.icon{
     width: 100px;
     height: 100px;
     margin: 14px 46px 80px 54px;
@@ -91,6 +106,8 @@
     left: 0;
     position: absolute;
     border-radius: 50%;
+    // transition: all .35s ease;
+    
 }
 .iconName{
     font-size: 16px;
@@ -111,6 +128,48 @@
     width: 100px;
     font-size: 16px;
     color: #fdfdfd;
+}
+.deleteico {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    cursor: default;
+    -webkit-transition: background-color .3s ease,box-shadow .3s ease;
+    display: none;
+    cursor: pointer;
+}
+.iconInIn:hover{
+    -webkit-filter: brightness(1.08);
+    animation: shadow 1s ease infinite;
+}
+.deleteico:hover{
+    background-color: #fff;
+}
+.icon-delete{
+    animation: rotate .2s ease infinite;
+}
+.icon-delete .deleteico{display: inline;}
+@keyframes shadow{
+    0%{
+        box-shadow: #fff 0 0 0px;
+    }
+    50%{
+        box-shadow: #fff 0 0 20px;
+    }
+    100%{
+        box-shadow: #fff 0 0 30px;
+    }
+}
+@keyframes rotate{
+    0%{
+        transform: rotate(-2deg);
+    }
+    100%{
+        transform: rotate(2deg);
+    }
 }
 
 </style>
