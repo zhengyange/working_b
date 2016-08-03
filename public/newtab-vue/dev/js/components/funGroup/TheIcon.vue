@@ -22,7 +22,7 @@
 		<div class="iconIn">
 			<div class="iconInIn" 
                 v-bind:style="styleData"
-                @click="dispatchChangeSlide(theIcon.id)"
+                :data-id="theIcon.id"
             >
                          
             </div>
