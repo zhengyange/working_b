@@ -50,6 +50,7 @@ module.exports = {
   //输出的文件名 合并以后的js会命名为bundle.js
   output: {
     path: BUILD_PATH,
+    publicPath: './build/',
     filename: '[name].js'
   },
   module: {
@@ -111,9 +112,9 @@ module.exports = {
     }),
     new webpack.ProvidePlugin({
     }),
-    new CopyWebpackPlugin([{
-        from: 'dev/htmlImg',
-        to: 'htmlImg'
-    }]),
+    new CopyWebpackPlugin([
+      {from: 'dev/htmlImg', to: 'htmlImg'},
+      {from: 'dev/manifast.json', to: '../manifast.json'}
+    ]),
   ].concat(getHtmlPlugin()),
 };
