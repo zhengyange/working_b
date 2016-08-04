@@ -41,22 +41,33 @@
 						@click="toggleTodoType('havedone')"
 					>完成</div>
 				</div>
-				<div id="cleardone" i18n="ClearAllDones" style="display: none;">清除完成事项</div>
+				<div id="cleardone" i18n="ClearAllDones" :class="{show: !isActive}">清除完成事项</div>
 			</div>
-			<div id="todosOut" style="padding-top: 115px;">
+			<div id="todosOut"  :class="{showDone: !isActive}">
 				<div id="contentOut">
-					<div id="todoContent" class="todosContent" style="display: block;">
+					<div id="todoContent" class="todosContent" :class="{show: isActive}">
 						<div class="labelOut">
 							<label class="checkLabel todoLabel checktodo todoFadeIn">
-								<input type="checkbox" class="checkbox">2
+								<input type="checkbox" class="checkbox">
+								2222222222
 							</label>
 							<div class="toTop"></div>
 						</div>
 						<div class="labelOut">
 							<label class="checkLabel todoLabel checktodo todoFadeIn">
-								<input type="checkbox" class="checkbox">1
+								<input type="checkbox" class="checkbox">
+								111111111111111
 							</label>
 							<div class="toTop"></div>
+						</div>
+					</div>
+					<div id="doneContent" class="todosContent" :class="{show: !isActive}">
+						<div class="labelOut">
+							<label class="checkLabel todoLabel checkdone">
+								<input type="checkbox" checked="checked" class="checkbox">
+								右上角导航条和锚点
+							</label>
+							<div class="todoDelete" style="display: none;"></div>
 						</div>
 					</div>
 				</div>
@@ -68,5 +79,10 @@
 	.labelOut:hover .checkbox{background-position: 0 22px;}
 	.labelOut:not(:first-child):hover .toTop{display:block;}
 	.todotype.show{color:rgb(46, 204, 113);}
+	.todosContent{display: none;}
+	.todosContent.show{display: block;}
 	.todoType:hover{-webkit-filter:brightness(1.05)}
+	.checkLabel{width: 300px;}
+	#cleardone.show{display: block;}
+	#todosOut.showDone{padding-top: 145px;}
 </style>

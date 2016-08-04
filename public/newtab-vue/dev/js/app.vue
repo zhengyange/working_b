@@ -186,4 +186,30 @@
     .slideout-enter, .slideout-leave{transform: translate(0px); box-shadow: grey 0 0 0;}
     ::-webkit-scrollbar {width: 6px;background-color: transparent;}
     ::-webkit-scrollbar-thumb {background-color: rgba(52,73,94,.2);border-radius: 4px;}
+    #appsSlideBigBox {overflow-y: scroll;overflow-x: hidden;}
+    input[type=password], input[type=search] {
+        padding: 0 10px;
+        line-height: 32px;
+        color: #555;
+        font-size: 14px;
+        margin: 0;
+        outline: 0;
+        font-family: "Segoe UI","Microsoft Yahei",Arial;
+    }
+    input[type=search] {
+        border: 1px solid #ECF0F1;
+        padding: 0 10px;
+        line-height: 32px;
+        color: #555;
+        font-size: 14px;
+        margin: 0;
+        outline: 0;
+        font-family: "Segoe UI","Microsoft Yahei",Arial;
+    }
+    input[type=search] {
+        width: 250px;
+        height: 32px;
+        border: 1px solid #ECF0F1;
+        border-radius: 30px;
+    }
 </style>
