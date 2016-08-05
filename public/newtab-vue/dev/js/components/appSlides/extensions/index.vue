@@ -1,7 +1,11 @@
 <script type="text/javascript">
 	import './extensions.css';
 	export default {
-
+		data: function(){
+			return {
+				bgUrl: `url(${metadata.host}/htmlImg/app.png)`
+			}
+		}
 	}
 </script>
 <template>
@@ -15,7 +19,7 @@
 					<div id="appTitle">Apps:</div>
 					<div id="AllApps">
 						<div class="appIconOut" enabled="true" appid="fhbjgbiflinjbdggehcddcbncdddomop" name="Postman">
-							<div class="appIcon extEnabledtrue" style="background-image:url(../../../../htmlImg/app.png)"></div>
+							<div class="appIcon extEnabledtrue" :style="{backgroundImage:bgUrl}"></div>
 							<div class="appName">Postman</div>
 						</div>
 					</div>

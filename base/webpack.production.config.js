@@ -78,7 +78,12 @@ module.exports = {
         },
         {
           test: /\.(png|jpg)$/,
-          loader: 'url?limit=40000'
+          loader: 'url-loader',
+          query: {
+            limit: 10000,
+            path:path.join(process.cwd()),
+            name:'buildImg/[name].[ext]'
+          }
         }
 
     ]

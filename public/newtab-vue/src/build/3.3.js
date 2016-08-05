@@ -72,7 +72,7 @@ webpackJsonp([3,8],{
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -85,12 +85,18 @@ webpackJsonp([3,8],{
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+		value: true
 	});
 
 	__webpack_require__(74);
 
-	exports.default = {};
+	exports.default = {
+		data: function data() {
+			return {
+				bgUrl: 'url(' + ({"host":"./build"}).host + '/htmlImg/app.png)'
+			};
+		}
+	};
 
 /***/ },
 
@@ -139,7 +145,7 @@ webpackJsonp([3,8],{
 /***/ 76:
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "\n\n\n\n\n\n\n<div id=\"todosSlide\" class=\"Slide\">\n\t<div class=\"slideTitle cf\" style=\"background-color:#1abc9c;\">\n\t\t<div class=\"topMenu fl\" in=\"todosSlide\" with=\"todos0\" style=\"\">应用与扩展</div>\n\t</div>\n\t<div id=\"appsSlideBigBox\" class=\"SlideBigBox\">\n\t\t<div id=\"allAppIcons\">\n\t\t\t<div>\n\t\t\t\t<div id=\"appTitle\">Apps:</div>\n\t\t\t\t<div id=\"AllApps\">\n\t\t\t\t\t<div class=\"appIconOut\" enabled=\"true\" appid=\"fhbjgbiflinjbdggehcddcbncdddomop\" name=\"Postman\">\n\t\t\t\t\t\t<div class=\"appIcon extEnabledtrue\" style=\"background-image:url(../../../../htmlImg/app.png)\"></div>\n\t\t\t\t\t\t<div class=\"appName\">Postman</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div style=\"clear:both\"></div>\n\t\t\t</div>\n\t\t\t<div id=\"allExt\">\n\t\t\t\t<div id=\"extTitle\">Extensions:</div>\n\t\t\t\t<div id=\"AllExts\" class=\"cf\">\n\t\t\t\t\t<div class=\"extensionItem\">\n\t\t\t\t\t\t<img src=\"" + __webpack_require__(77) + "\" class=\"extEnabledtrue\">\n\t\t\t\t\t\t<div class=\"extensionItemName extensionItemNametrue\">Octotree</div>\n\t\t\t\t\t\t<div appid=\"bkhaagjahfmjljalopjnoealnfndnagc\" name=\"Octotree\" enabled=\"true\" class=\"extensionItemAble extensionItemAbletrue\">禁用</div>\n\t\t\t\t\t\t<div appid=\"bkhaagjahfmjljalopjnoealnfndnagc\" name=\"Octotree\" class=\"extensionItemDelete\"></div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"extensionItem\">\n\t\t\t\t\t\t<img src=\"" + __webpack_require__(77) + "\" class=\"extEnabledtrue\">\n\t\t\t\t\t\t<div class=\"extensionItemName extensionItemNametrue\">Octotree</div>\n\t\t\t\t\t\t<div appid=\"bkhaagjahfmjljalopjnoealnfndnagc\" name=\"Octotree\" enabled=\"true\" class=\"extensionItemAble extensionItemAbletrue\">禁用</div>\n\t\t\t\t\t\t<div appid=\"bkhaagjahfmjljalopjnoealnfndnagc\" name=\"Octotree\" class=\"extensionItemDelete\"></div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"extensionItem\">\n\t\t\t\t\t\t<img src=\"" + __webpack_require__(77) + "\" class=\"extEnabledtrue\">\n\t\t\t\t\t\t<div class=\"extensionItemName extensionItemNametrue\">Octotree</div>\n\t\t\t\t\t\t<div appid=\"bkhaagjahfmjljalopjnoealnfndnagc\" name=\"Octotree\" enabled=\"true\" class=\"extensionItemAble extensionItemAbletrue\">禁用</div>\n\t\t\t\t\t\t<div appid=\"bkhaagjahfmjljalopjnoealnfndnagc\" name=\"Octotree\" class=\"extensionItemDelete\"></div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"extensionItem\">\n\t\t\t\t\t\t<img src=\"" + __webpack_require__(77) + "\" class=\"extEnabledtrue\">\n\t\t\t\t\t\t<div class=\"extensionItemName extensionItemNametrue\">Octotree</div>\n\t\t\t\t\t\t<div appid=\"bkhaagjahfmjljalopjnoealnfndnagc\" name=\"Octotree\" enabled=\"true\" class=\"extensionItemAble extensionItemAbletrue\">禁用</div>\n\t\t\t\t\t\t<div appid=\"bkhaagjahfmjljalopjnoealnfndnagc\" name=\"Octotree\" class=\"extensionItemDelete\"></div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"extensionItem\">\n\t\t\t\t\t\t<img src=\"" + __webpack_require__(77) + "\" class=\"extEnabledtrue\">\n\t\t\t\t\t\t<div class=\"extensionItemName extensionItemNametrue\">Octotree</div>\n\t\t\t\t\t\t<div appid=\"bkhaagjahfmjljalopjnoealnfndnagc\" name=\"Octotree\" enabled=\"true\" class=\"extensionItemAble extensionItemAbletrue\">禁用</div>\n\t\t\t\t\t\t<div appid=\"bkhaagjahfmjljalopjnoealnfndnagc\" name=\"Octotree\" class=\"extensionItemDelete\"></div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</div>\n";
+	module.exports = "\n\n\n\n\n\n\n\n\n\n\n<div id=\"todosSlide\" class=\"Slide\">\n\t<div class=\"slideTitle cf\" style=\"background-color:#1abc9c;\">\n\t\t<div class=\"topMenu fl\" in=\"todosSlide\" with=\"todos0\" style=\"\">应用与扩展</div>\n\t</div>\n\t<div id=\"appsSlideBigBox\" class=\"SlideBigBox\">\n\t\t<div id=\"allAppIcons\">\n\t\t\t<div>\n\t\t\t\t<div id=\"appTitle\">Apps:</div>\n\t\t\t\t<div id=\"AllApps\">\n\t\t\t\t\t<div class=\"appIconOut\" enabled=\"true\" appid=\"fhbjgbiflinjbdggehcddcbncdddomop\" name=\"Postman\">\n\t\t\t\t\t\t<div class=\"appIcon extEnabledtrue\" :style=\"{backgroundImage:bgUrl}\"></div>\n\t\t\t\t\t\t<div class=\"appName\">Postman</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div style=\"clear:both\"></div>\n\t\t\t</div>\n\t\t\t<div id=\"allExt\">\n\t\t\t\t<div id=\"extTitle\">Extensions:</div>\n\t\t\t\t<div id=\"AllExts\" class=\"cf\">\n\t\t\t\t\t<div class=\"extensionItem\">\n\t\t\t\t\t\t<img src=\"" + __webpack_require__(77) + "\" class=\"extEnabledtrue\">\n\t\t\t\t\t\t<div class=\"extensionItemName extensionItemNametrue\">Octotree</div>\n\t\t\t\t\t\t<div appid=\"bkhaagjahfmjljalopjnoealnfndnagc\" name=\"Octotree\" enabled=\"true\" class=\"extensionItemAble extensionItemAbletrue\">禁用</div>\n\t\t\t\t\t\t<div appid=\"bkhaagjahfmjljalopjnoealnfndnagc\" name=\"Octotree\" class=\"extensionItemDelete\"></div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"extensionItem\">\n\t\t\t\t\t\t<img src=\"" + __webpack_require__(77) + "\" class=\"extEnabledtrue\">\n\t\t\t\t\t\t<div class=\"extensionItemName extensionItemNametrue\">Octotree</div>\n\t\t\t\t\t\t<div appid=\"bkhaagjahfmjljalopjnoealnfndnagc\" name=\"Octotree\" enabled=\"true\" class=\"extensionItemAble extensionItemAbletrue\">禁用</div>\n\t\t\t\t\t\t<div appid=\"bkhaagjahfmjljalopjnoealnfndnagc\" name=\"Octotree\" class=\"extensionItemDelete\"></div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"extensionItem\">\n\t\t\t\t\t\t<img src=\"" + __webpack_require__(77) + "\" class=\"extEnabledtrue\">\n\t\t\t\t\t\t<div class=\"extensionItemName extensionItemNametrue\">Octotree</div>\n\t\t\t\t\t\t<div appid=\"bkhaagjahfmjljalopjnoealnfndnagc\" name=\"Octotree\" enabled=\"true\" class=\"extensionItemAble extensionItemAbletrue\">禁用</div>\n\t\t\t\t\t\t<div appid=\"bkhaagjahfmjljalopjnoealnfndnagc\" name=\"Octotree\" class=\"extensionItemDelete\"></div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"extensionItem\">\n\t\t\t\t\t\t<img src=\"" + __webpack_require__(77) + "\" class=\"extEnabledtrue\">\n\t\t\t\t\t\t<div class=\"extensionItemName extensionItemNametrue\">Octotree</div>\n\t\t\t\t\t\t<div appid=\"bkhaagjahfmjljalopjnoealnfndnagc\" name=\"Octotree\" enabled=\"true\" class=\"extensionItemAble extensionItemAbletrue\">禁用</div>\n\t\t\t\t\t\t<div appid=\"bkhaagjahfmjljalopjnoealnfndnagc\" name=\"Octotree\" class=\"extensionItemDelete\"></div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"extensionItem\">\n\t\t\t\t\t\t<img src=\"" + __webpack_require__(77) + "\" class=\"extEnabledtrue\">\n\t\t\t\t\t\t<div class=\"extensionItemName extensionItemNametrue\">Octotree</div>\n\t\t\t\t\t\t<div appid=\"bkhaagjahfmjljalopjnoealnfndnagc\" name=\"Octotree\" enabled=\"true\" class=\"extensionItemAble extensionItemAbletrue\">禁用</div>\n\t\t\t\t\t\t<div appid=\"bkhaagjahfmjljalopjnoealnfndnagc\" name=\"Octotree\" class=\"extensionItemDelete\"></div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</div>\n";
 
 /***/ },
 
