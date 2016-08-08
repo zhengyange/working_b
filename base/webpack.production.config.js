@@ -51,7 +51,8 @@ module.exports = {
   output: {
     path: BUILD_PATH,
     publicPath: './build/',
-    filename: '[name].js'
+    filename: '[name].js',
+    chunkFilename: '/chunk/[name].js'
   },
   module: {
     //和loaders一样的语法，很简单
@@ -121,5 +122,10 @@ module.exports = {
       {from: 'dev/htmlImg', to: 'htmlImg'},
       {from: 'dev/manifast.json', to: '../manifast.json'}
     ]),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      }
+    })
   ].concat(getHtmlPlugin()),
 };

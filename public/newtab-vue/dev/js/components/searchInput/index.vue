@@ -23,6 +23,7 @@
 		methods: {
 			toggleShowEngines(){
 				// this.showSearchEngines = !this.showSearchEngines;
+				test = 'abcdef';
 				this.$dispatch('toggle-engines')
 			},
 			handleSearchResults(){

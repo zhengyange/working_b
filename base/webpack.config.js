@@ -56,7 +56,8 @@ module.exports = {
     inline: true,
     progress: true,
   },
-  devtool: '#eval-source-map',
+  // devtool: '#eval-source-map',
+  devtool: '#cheap-module-eval-source-map',
   entry: getEntry(),
 
   //输出的文件名 合并以后的js会命名为bundle.js
@@ -64,7 +65,8 @@ module.exports = {
     path: BUILD_PATH,
     // publicPath: './build/',
     filename: '[name].js',
-    sourceMapFilename: '[file].map'
+    sourceMapFilename: '[file].map',
+    chunkFilename: '/chunk/[name].js'
   },
   module: {
   	//和loaders一样的语法，很简单
@@ -97,7 +99,7 @@ module.exports = {
         },
         {
           test: /\.(png|jpg)$/,
-          loader: 'url?limit=100000'
+          loader: 'url?limit=10000'
         }
 
     ]
