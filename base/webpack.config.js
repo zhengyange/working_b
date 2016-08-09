@@ -45,7 +45,7 @@ console.log(getHtmlPlugin());
 
 
 var metadata = {
-  host: "./"
+  host: "http://localhost:8080"
 };
 
 module.exports = {
@@ -63,7 +63,7 @@ module.exports = {
   //输出的文件名 合并以后的js会命名为bundle.js
   output: {
     path: BUILD_PATH,
-    // publicPath: './build/',
+    // publicPath: 'http://localhost:8080',
     filename: '[name].js',
     sourceMapFilename: '[file].map',
     chunkFilename: '/chunk/[name].js'
