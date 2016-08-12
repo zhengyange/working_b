@@ -120,7 +120,7 @@ module.exports = {
     }),
     new CopyWebpackPlugin([
       {from: 'dev/htmlImg', to: 'htmlImg'},
-      {from: 'dev/manifast.json', to: '../manifast.json'}
+      {from: 'dev/manifest.json', to: '../manifest.json'}
     ]),
     new webpack.optimize.UglifyJsPlugin({
       compress: {

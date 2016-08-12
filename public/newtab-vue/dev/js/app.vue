@@ -12,6 +12,7 @@
     import funGroup from './components/funGroup';
 
     import { addClickEvent } from './utils/dom-helper.js';
+    import store from './vuex/store.js';
 
     //es6
     export default {
@@ -27,6 +28,7 @@
                 currentSlide: ''
             }
         },
+        store: store,
         components: {
             searchOptions,
             searchInput,

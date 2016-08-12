@@ -1,0 +1,6 @@
+@charset "utf-8"; //解决中文报错
+
+@mixin ib($vertical-align:middle){
+	display:inline-block;*display:inline;*zoom:1;
+	vertical-align:#{$vertical-align};//*vertical-align:auto;
+}
