@@ -4,6 +4,9 @@ export default {
     return {
       authenticating: false
     }
+  },
+  ready(){
+    console.log(111111111)
   }
 }
 </script>

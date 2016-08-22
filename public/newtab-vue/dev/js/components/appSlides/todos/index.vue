@@ -1,9 +1,17 @@
 <script type="text/javascript">
 	import './todosSlide.css';
+	import { 
+		addTodo, 
+		toggleTodoDone, 
+		clearTodoDone,
+		getTodos 
+	} from './todosActions.js';
+
 	export default {
 		data: function(){
 			return {
-				isActive: true
+				isActive: true,
+				todotext: ''
 			}
 		},
         activate: function(done){
@@ -19,8 +27,41 @@
         		if(todotype === 'havedone'){
         			this.isActive = false;
         		}
+        	},
+        	handleAddTodo: function(){
+        		this.addTodo(this.todotext);
+        		this.todotext = '';
         	}
-        }
+        }, 
+        created: function(){
+        	this.getTodos();
+        },
+        ready: function(){
+
+        },
+        computed: {
+        	undoneTodos: function(){
+        		return this.todos.filter(function(todo, index) {
+        			return !todo.done
+        		}).reverse();
+        	},
+        	doneTodos: function(){
+        		return  this.todos.filter((todo, index) => {
+        			return todo.done
+        		}).reverse();
+        	}
+        },       
+		vuex: {
+			getters: {
+				todos: state => state.todosStore.todos
+			},
+			actions: {
+				addTodo,
+				toggleTodoDone,
+				clearTodoDone,
+				getTodos
+			}
+		}
 	}
 </script>
 <template>
@@ -30,7 +71,10 @@
 		</div>
 		<div id="todosSlideBigBox" class="SlideBigBox">
 			<div id="todoTop">
-				<input type="search" id="addTodos" i18n-placeholder="whatNext" class="inputMargin todoInput" placeholder="接下来做点什么？">
+				<input type="search" id="addTodos" i18n-placeholder="whatNext" class="inputMargin todoInput" placeholder="接下来做点什么？"
+					v-model="todotext"
+					@keyup.enter="handleAddTodo"
+				>
 				<div id="todoType">
 					<div class="todotype" id="notdone" i18n="Todo"
 						:class="{show: isActive}"
@@ -41,31 +85,33 @@
 						@click="toggleTodoType('havedone')"
 					>完成</div>
 				</div>
-				<div id="cleardone" i18n="ClearAllDones" :class="{show: !isActive}">清除完成事项</div>
+				<div id="cleardone" i18n="ClearAllDones" 
+					:class="{show: !isActive}"
+					@click="clearTodoDone">
+					清除完成事项
+				</div>
 			</div>
 			<div id="todosOut"  :class="{showDone: !isActive}">
 				<div id="contentOut">
 					<div id="todoContent" class="todosContent" :class="{show: isActive}">
-						<div class="labelOut">
-							<label class="checkLabel todoLabel checktodo todoFadeIn">
+						<div class="labelOut" v-for="todo in undoneTodos">
+							<label class="checkLabel todoLabel checktodo todoFadeIn"
+								@click="toggleTodoDone(todo.id, true)"
+							>
 								<input type="checkbox" class="checkbox">
-								2222222222
+								{{todo.text}}
 							</label>
 							<div class="toTop"></div>
 						</div>
-						<div class="labelOut">
-							<label class="checkLabel todoLabel checktodo todoFadeIn">
-								<input type="checkbox" class="checkbox">
-								111111111111111
-							</label>
-							<div class="toTop"></div>
-						</div>
+						
 					</div>
 					<div id="doneContent" class="todosContent" :class="{show: !isActive}">
-						<div class="labelOut">
-							<label class="checkLabel todoLabel checkdone">
+						<div class="labelOut" v-for="todo in doneTodos">
+							<label class="checkLabel todoLabel checkdone"
+								@click="toggleTodoDone(todo.id, false)"
+							>
 								<input type="checkbox" checked="checked" class="checkbox">
-								右上角导航条和锚点
+								{{todo.text}}
 							</label>
 							<div class="todoDelete" style="display: none;"></div>
 						</div>

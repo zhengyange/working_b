@@ -125,6 +125,7 @@
 .theIconName2x5 {
     bottom: -40px;
     height: 20px;
+    line-height: 20px;
     width: 100px;
     font-size: 16px;
     color: #fdfdfd;

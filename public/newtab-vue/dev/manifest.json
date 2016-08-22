@@ -18,6 +18,9 @@
         "tabs",
         "*://*/*"       
     ],
+    "background": {
+        "scripts": ["build/common.js", "build/background.js"]
+    },
     "chrome_url_overrides":{
         "newtab": "index.html"
     },
