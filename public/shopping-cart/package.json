@@ -1,4 +1,6 @@
 {
+	"name": "working",
+    "version": "1.0.0",
 	"scripts": {
     	"start": "webpack-dev-server --hot --inline --config ../../base/webpack.config.js",
     	"build": "webpack --progress --profile --colors --config ../../base/webpack.production.config.js",
