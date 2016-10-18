@@ -1,8 +1,3 @@
-<script type="text/javascript">
-	export default {
-		
-	}
-</script>
 <template>
-	<p>This is baZ!</p>
+	<h3>Baz</h3>
 </template>

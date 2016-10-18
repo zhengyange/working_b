@@ -9,7 +9,7 @@ var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 var APP_PATH = path.resolve(process.cwd());
 console.log(APP_PATH)
-var BUILD_PATH = path.resolve(APP_PATH, 'src/build');
+var BUILD_PATH = path.resolve(APP_PATH, 'dist/build');
 
 //项目中的入口文件，应该会有好多
 function getEntry() {
@@ -99,7 +99,7 @@ module.exports = {
         },
         {
           test: /\.(png|jpg)$/,
-          loader: 'url?limit=10000'
+          loader: 'url?limit=1000'
         }
 
     ]

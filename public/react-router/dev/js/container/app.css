@@ -6,13 +6,13 @@
 
 .example-enter {
   opacity: 0.01;
-  /* transform: translateX(100%); */
+  transform: translateX(100%);
   transition: all .5s ease-in;
 }
 
 .example-enter.example-enter-active {
   opacity: 1;
-  /* transform: translateX(0); */
+  transform: translateX(0);
 }
 
 .example-leave {
@@ -22,10 +22,19 @@
 
 .example-leave.example-leave-active {
   opacity: 0;
-  /* transform: translateX(-100%); */
+  transform: translateX(-100%);
 }
 
 .link-active {
   color: #bbbbbb;
   text-decoration: none;
 }
+
+.example-appear{
+  opacity: 0.01;
+}
+.example-appear.example-appear-active{
+  opacity: 1;
+  transition: opacity .3s ease-in;
+}
+

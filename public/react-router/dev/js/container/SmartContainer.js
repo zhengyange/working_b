@@ -53,9 +53,10 @@ class SmartContainer extends Component{
 
                 <ReactCSSTransitionGroup
                   component="div"
-                  transitionName={!this.state.isBack ? 'example' : ''}
+                  transitionName="example"
+                  transitionAppear={true}
+                  transitionAppearTimeout={800}
                   transitionEnterTimeout={500}
-                  transitionLeave={true}
                   transitionLeaveTimeout={0}
                 >
                   {React.cloneElement(this.props.children || <Index />, {

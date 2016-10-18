@@ -1,25 +1,41 @@
 <script>
-    import store from './store.js';
-    store.dispatch('INCREMENT');
-    store.dispatch('INCREMENT');
-    console.log(store.state.count)
+    import store from './vuex/store.js';
+    import { mapState } from 'vuex';
 
     //es6
     export default {
-        el:"#app",
-         //data:function(){}，下面是es6写法
-         data () {
+        store,
+        data () {
             return {
-                name:"guowenfh",
-                age:"2q1222222222222"
+            }
+        },
+        methods: {
+            increment(){
+                this.count++;
+            }
+        },
+        computed: {
+            ...mapState({
+                count: state => state.count
+            })
+        },
+        methods: {
+            increment(){
+                store.commit('increment');
+            },
+            decrement(){
+                store.commit('decrement');
             }
         }
     }
 </script>
 <template>
     <div>
-        <h1>姓名：{{name}}</h1>
-        <h2>{{age}}</h2>
+        <div>Click: {{ count }}</div>
+        <p>
+            <button @click="increment">+</button>
+            <button @click="decrement">-</button>
+        </p>
     </div>
 </template>
 <style lang="sass">
