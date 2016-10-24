@@ -8,12 +8,10 @@
 		<router-view></router-view>	
 	</div>
 </template>
-<style lang="sass" scoped>
-@import './components/app.scss';
-p {
-  color: red;
-}
-.p-2{
-	color: green;
-}
+<style lang="sass">
+	//根组件内，引入全局的css，不需要配置scoped
+	@import './assets/scss/common.scss';
+	.page{
+		height: 100%;
+	}
 </style>

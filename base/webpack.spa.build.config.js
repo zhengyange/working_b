@@ -3,6 +3,7 @@ var glob = require('glob');
 var webpack = require('webpack');
 var HtmlwebpackPlugin = require('html-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var helpers = require('./helpers.js');
 var projectName = helpers.getProjectName();
 
@@ -10,7 +11,7 @@ var projectName = helpers.getProjectName();
 
 var APP_PATH = path.resolve(process.cwd());
 console.log(APP_PATH)
-var BUILD_PATH = path.resolve(APP_PATH, 'dist');
+var BUILD_PATH = path.resolve(APP_PATH, './dist/');
 
 //项目中的入口文件，应该会有好多
 function getEntry() {
@@ -66,9 +67,9 @@ module.exports = {
   output: {
     path: BUILD_PATH,
     publicPath: cdnPath,
-    filename: '/build/[name].js',
-    sourceMapFilename: '/build/[file].map',
-    chunkFilename: '/build/chunk/[name].js'
+    filename: '/static/js/[name].js',
+    sourceMapFilename: '/static/js/[file].map',
+    chunkFilename: '/static/js/chunk/[name].js'
   },
   module: {
   	//和loaders一样的语法，很简单
@@ -93,11 +94,11 @@ module.exports = {
         },
         {
           test: /\.(css)$/,
-          loader: 'style-loader!css-loader'
+          loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
         },
         {
           test: /\.scss$/,
-          loaders: ['style', 'css', 'sass?sourceMap'],
+          loader: ExtractTextPlugin.extract('style-loader', 'css-loader', 'sass-loader?sourceMap')
         },
         {
           test: /\.(png|jpg|jpeg)$/,
@@ -105,7 +106,15 @@ module.exports = {
           query:{
             limit:10000,
             path:path.join(process.cwd()),
-            name:'/images/[name].[ext]'
+            name:'/static/images/[name].[ext]'
+          }
+        },
+        { 
+          test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/, 
+          loader: 'url-loader',
+          query: {
+            limit: 1000,
+            name: '/static/fonts/[name].[ext]'
           }
         }
 
@@ -135,6 +144,7 @@ module.exports = {
 
   //添加我们的插件 会自动生成一个html文件
   plugins: [
+    new ExtractTextPlugin('/static/css/[name].csss', {'omit': 1, 'extract': true, 'remove': true}),
       //把入口文件里面的数组打包成verdors.js
     new webpack.optimize.CommonsChunkPlugin({
       names: ['vendor']
