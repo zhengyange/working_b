@@ -3,13 +3,12 @@ var glob = require('glob');
 var webpack = require('webpack');
 var HtmlwebpackPlugin = require('html-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
-// var helpers = require('./helpers.js');
+var helpers = require('./helpers.js');
 
 //一些文件夹的路径
 
 // var BUILD_PATH = path.resolve(__dirname, './dist');
-var BUILD_PATH = path.resolve(__dirname, './dist/');
+var BUILD_PATH = path.resolve(__dirname);
 
 
 //项目中的入口文件，应该会有好多
@@ -61,14 +60,14 @@ module.exports = {
 
   //输出的文件名 合并以后的js会命名为bundle.js
   output: {
-    path: BUILD_PATH + '/static',
+    path: BUILD_PATH,
     publicPath: 'http://localhost:8080/',
-    filename: '/static/js/[name].js',
-    sourceMapFilename: '/static/js/[file].map',
-    chunkFilename: '/static/js/chunk/[name].js'
+    filename: '/build/[name].js',
+    sourceMapFilename: '/build/[file].map',
+    chunkFilename: '/build/chunk/[name].js'
   },
   module: {
-  	//和loaders一样的语法，很简单
+    //和loaders一样的语法，很简单
     perLoaders: [
         {
             test: /\.js$/,
@@ -90,13 +89,11 @@ module.exports = {
         },
         {
           test: /\.(css)$/,
-          // loader: 'style-loader!css-loader'
-          loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
+          loader: 'style-loader!css-loader'
         },
         {
           test: /\.scss$/,
-          // loaders: ['style', 'css', 'sass?sourceMap'],
-          loader: ExtractTextPlugin.extract('style-loader', 'css-loader', 'sass-loader?sourceMap')
+          loaders: ['style', 'css', 'sass?sourceMap'],
         },
         {
           test: /\.(png|jpg|jpeg)$/,
@@ -104,15 +101,7 @@ module.exports = {
           query:{
             limit:2048,
             path:path.join(process.cwd()),
-            name:'/static/images/[name].[ext]'
-          }
-        },
-        { 
-          test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/, 
-          loader: 'url-loader',
-          query: {
-            limit: 1000,
-            name: '/static/fonts/[name].[ext]'
+            name:'images/[name].[ext]'
           }
         }
 
@@ -123,9 +112,12 @@ module.exports = {
       extensions: ['', '.js', '.vue'],
       // 别名，可以直接使用别名来代表设定的路径以及其他
       alias: {
-        'iscroll-lite': path.join(process.cwd(), '../', 'node_modules/iscroll/build/iscroll-lite.js'),
-        'common.scss': path.join(process.cwd(),'/src/assets/scss/common.scss'),
-        'Mask': path.join(process.cwd(), '..', 'common/components/Mask.vue')
+        'iscroll-lite': path.join(process.cwd(), 'node_modules/iscroll/build/iscroll-lite.js'),
+        'common.scss': path.join(process.cwd(), '..','common/scss/common.scss'),
+        'app.scss': path.join(process.cwd(), '..','common/scss/app.scss'),
+        'Vcontent': path.join(process.cwd(), '..', 'common/components/vcontent'),
+        'Mask': path.join(process.cwd(), 'src/components/Mask.vue'),
+        'PageView': path.join(process.cwd(), 'src/components/PageView.vue')
 
       }
   },
@@ -138,7 +130,6 @@ module.exports = {
 
   //添加我们的插件 会自动生成一个html文件
   plugins: [
-    new ExtractTextPlugin('/static/css/[name].css', {'omit': 1, 'extract': true, 'remove': true}),
       //把入口文件里面的数组打包成verdors.js
     new webpack.optimize.CommonsChunkPlugin({
       names: ['vendor']

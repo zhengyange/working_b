@@ -98,8 +98,13 @@ module.exports = {
           loaders: ['style', 'css', 'sass?sourceMap'],
         },
         {
-          test: /\.(png|jpg)$/,
-          loader: 'url?limit=1000'
+          test: /\.(png|jpg|svg)$/,
+          loader: 'url',
+          query:{
+            limit:10,
+            path:path.join(process.cwd()),
+            name:'/img/[name].[ext]'
+          }
         }
 
     ]

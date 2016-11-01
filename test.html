@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test</title>
+</head>
+<body>
+<button>A</button>
+<button>B</button>
+<button>C</button>
+<button>D</button>
+<p id="output"></p>
+
+<script type="text/javascript">
+	var buttons = document.querySelectorAll('button');
+	var output = document.querySelector('#output');
+
+	for(/*var*/ let i = 0; i < buttons.length; i ++){
+		buttons[i].addEventListener('click', function(evt){
+			output.innerHTML = buttons[i].innerHTML;
+		}, false)
+	}
+
+	// const set = new Set([1, 2, 3]);
+	// console.log(set)
+	
+
+	// const weakset = new WeakSet();
+	// // weakset.add(1);
+	// weakset.add({foo: 1});
+	// console.log(weakset);
+
+	// let foo = {bar: 1};
+	// weakset.add(foo);
+	// console.log(weakset)
+
+	// foo = null;
+	// console.log(weakset);
+	// console.log(weakset.has(foo));
+
+	function* genFn(){
+	   let a = 2;
+	   yield a;
+	   
+	   while(true){
+	   		yield a = a / (2 * a + 1)
+	   }
+	}
+
+	const gen = genFn();
+	// console.log(gen.next())
+	// console.log(gen.next())
+</script>
+</body>
+</html>
